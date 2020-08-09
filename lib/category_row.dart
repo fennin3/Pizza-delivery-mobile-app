@@ -54,9 +54,15 @@ class _CategoryRowState extends State<CategoryRow> {
         Expanded(
           child: GestureDetector(
             onTap: () {
-              setState(() {
-                UpdateBackColor(1);
-              });
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => ListItems(),
+                ),
+              );
+              // setState(() {
+              //   UpdateBackColor(3);
+              // });
             },
             child: CategoryCard(
               background_: CatCard1_Color,
@@ -71,9 +77,15 @@ class _CategoryRowState extends State<CategoryRow> {
         Expanded(
           child: GestureDetector(
             onTap: () {
-              setState(() {
-                UpdateBackColor(2);
-              });
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => ListItems(),
+                ),
+              );
+              // setState(() {
+              //   UpdateBackColor(3);
+              // });
             },
             child: CategoryCard(
               background_: CatCard2_Color,

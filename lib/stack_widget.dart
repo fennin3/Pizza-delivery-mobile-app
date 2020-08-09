@@ -40,8 +40,11 @@ class StackWidget extends StatelessWidget {
         Positioned(
           bottom: 65,
           left: 30,
-          child: Image.asset(
-            "assets/images/pizza_image3.png",
+          child: Hero(
+            tag: "image_",
+            child: Image.asset(
+              "assets/images/pizza_image3.png",
+            ),
           ),
           height: 230,
         ),

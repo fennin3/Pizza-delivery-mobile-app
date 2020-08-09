@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pizza_app/constants.dart';
+import 'package:pizza_app/quantity_icon.dart';
 
 class DetailScreen extends StatelessWidget {
   @override
@@ -31,9 +32,12 @@ class DetailScreen extends StatelessWidget {
                 Positioned(
                   left: 50,
                   top: 35,
-                  child: Image.asset(
-                    "assets/images/pizza_image3.png",
-                    height: 250,
+                  child: Hero(
+                    tag: "image_",
+                    child: Image.asset(
+                      "assets/images/pizza_image3.png",
+                      height: 250,
+                    ),
                   ),
                 ),
                 Positioned(
@@ -89,14 +93,8 @@ class DetailScreen extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                Card(
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(15),
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.all(5.0),
-                    child: Icon(Icons.remove),
-                  ),
+                QuantityIcon(
+                  icon: Icon(Icons.remove),
                 ),
                 SizedBox(
                   width: 35,
@@ -108,15 +106,9 @@ class DetailScreen extends StatelessWidget {
                 SizedBox(
                   width: 35,
                 ),
-                Card(
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(15),
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.all(5.0),
-                    child: Icon(Icons.add),
-                  ),
-                )
+                QuantityIcon(
+                  icon: Icon(Icons.add),
+                ),
               ],
             ),
             SizedBox(
