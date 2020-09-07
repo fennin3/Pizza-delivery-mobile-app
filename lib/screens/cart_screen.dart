@@ -58,7 +58,7 @@ class _CartScreenState extends State<CartScreen> {
               },
               child: Card(
                 elevation: 10,
-                color: Colors.teal,
+                color: Theme.of(context).primaryColor,
                 margin: EdgeInsets.only(
                   top: 20,
                 ),
@@ -70,6 +70,21 @@ class _CartScreenState extends State<CartScreen> {
             ),
           )
         ],
+      ),
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: Theme.of(context).primaryColor,
+        onPressed: () => {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => CartScreen(),
+            ),
+          ),
+        },
+        child: Icon(
+          Icons.shopping_cart,
+          color: Colors.black,
+        ),
       ),
     );
   }

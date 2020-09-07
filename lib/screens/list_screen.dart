@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pizza_app/constants.dart';
 import 'package:pizza_app/list_meal.dart';
+import 'cart_screen.dart';
 
 class ListItems extends StatelessWidget {
   @override
@@ -28,6 +29,21 @@ class ListItems extends StatelessWidget {
               )
             ],
           ),
+        ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: Theme.of(context).primaryColor,
+        onPressed: () => {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => CartScreen(),
+            ),
+          ),
+        },
+        child: Icon(
+          Icons.shopping_cart,
+          color: Colors.black,
         ),
       ),
     );

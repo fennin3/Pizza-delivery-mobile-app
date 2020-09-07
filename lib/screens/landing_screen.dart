@@ -15,7 +15,11 @@ class _LandingScreenState extends State<LandingScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Pizza'),
+        backgroundColor: Theme.of(context).primaryColor,
+        title: Text(
+          'Pizza',
+          style: TextStyle(color: Colors.black),
+        ),
       ),
       body: SafeArea(
         child: SingleChildScrollView(
@@ -25,7 +29,7 @@ class _LandingScreenState extends State<LandingScreen> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 Text(
-                  "Online Pizza👨‍🍳 Delivery",
+                  "Online Food Delivery",
                   style: kTextLabelStyle,
                 ),
                 SizedBox(
@@ -55,7 +59,7 @@ class _LandingScreenState extends State<LandingScreen> {
                     Container(
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(5),
-                        color: Colors.teal,
+                        color: Color(0xffF4C724),
                       ),
                       padding: EdgeInsets.all(2),
                       child: Icon(
@@ -89,7 +93,7 @@ class _LandingScreenState extends State<LandingScreen> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        backgroundColor: Colors.teal,
+        backgroundColor: Theme.of(context).primaryColor,
         onPressed: () => {
           Navigator.push(
             context,
@@ -98,7 +102,10 @@ class _LandingScreenState extends State<LandingScreen> {
             ),
           ),
         },
-        child: Icon(Icons.shopping_cart),
+        child: Icon(
+          Icons.shopping_cart,
+          color: Colors.black,
+        ),
       ),
     );
   }

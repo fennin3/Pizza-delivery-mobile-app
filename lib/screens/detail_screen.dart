@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pizza_app/constants.dart';
 import 'package:pizza_app/quantity_icon.dart';
+import 'cart_screen.dart';
 
 class DetailScreen extends StatelessWidget {
   @override
@@ -45,7 +46,7 @@ class DetailScreen extends StatelessWidget {
                   left: 40,
                   child: Card(
                     elevation: 10,
-                    color: Colors.teal,
+                    color: Theme.of(context).primaryColor,
                     child: Padding(
                       padding: EdgeInsets.all(10),
                       child: Text(
@@ -60,7 +61,7 @@ class DetailScreen extends StatelessWidget {
                   left: 160,
                   child: Card(
                     elevation: 10,
-                    color: Colors.teal,
+                    color: Theme.of(context).primaryColor,
                     child: Padding(
                       padding: EdgeInsets.all(10),
                       child: Text(
@@ -75,7 +76,7 @@ class DetailScreen extends StatelessWidget {
                   right: 40,
                   child: Card(
                     elevation: 10,
-                    color: Colors.teal,
+                    color: Theme.of(context).primaryColor,
                     child: Padding(
                       padding: EdgeInsets.all(10),
                       child: Text(
@@ -114,55 +115,56 @@ class DetailScreen extends StatelessWidget {
             SizedBox(
               height: 20,
             ),
+            Text(
+              "Price:  \$50.00",
+              style: Quantity,
+            ),
+            SizedBox(
+              height: 15,
+            ),
             Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                Padding(
-                  padding: const EdgeInsets.only(left: 20),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: <Widget>[
-                      Text(
-                        "Price",
-                        style: TextStyle(
-                          fontSize: 16,
-                          color: Colors.white38,
+                Card(
+                  elevation: 15,
+                  color: Theme.of(context).primaryColor,
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Row(
+                      children: [
+                        Icon(Icons.add_shopping_cart),
+                        SizedBox(
+                          width: 8,
                         ),
-                      ),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      Text(
-                        "\$20.00",
-                        style: Quantity,
-                      )
-                    ],
+                        Text("Go to cart"),
+                      ],
+                    ),
                   ),
                 ),
-                Container(
-                  padding: EdgeInsets.all(12),
-                  decoration: BoxDecoration(
-                    color: Colors.teal,
-                    borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(15),
-                        bottomLeft: Radius.circular(15)),
-                  ),
-                  child: Row(
-                    children: <Widget>[
-                      Icon(Icons.add_shopping_cart),
-                      SizedBox(
-                        width: 8,
-                      ),
-                      Text("Go to cart")
-                    ],
-                  ),
-                )
+                SizedBox(
+                  height: 15,
+                ),
               ],
             ),
             SizedBox(
-              height: 20,
+              height: 15,
             ),
           ],
+        ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: Theme.of(context).primaryColor,
+        onPressed: () => {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => CartScreen(),
+            ),
+          ),
+        },
+        child: Icon(
+          Icons.shopping_cart,
+          color: Colors.black,
         ),
       ),
     );

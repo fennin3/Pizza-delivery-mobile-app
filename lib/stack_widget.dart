@@ -29,7 +29,7 @@ class StackWidget extends StatelessWidget {
                 borderRadius: BorderRadius.all(
                   Radius.circular(15),
                 ),
-                color: Colors.teal,
+                color: Colors.white30,
               ),
               margin: EdgeInsets.only(bottom: 70),
               height: 150,
